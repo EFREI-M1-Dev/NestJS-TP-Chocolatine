@@ -1,20 +1,22 @@
-import {Controller, Get, Param} from '@nestjs/common';
-import { AppService } from './app.service';
-import {Character} from "./character/character";
-import {CharacterService} from "./character/character.service";
+import {Controller, Get} from '@nestjs/common';
+import {AppService} from './app.service';
+import {LoggerService} from "./logger/logger.service";
 
 @Controller()
 export class AppController {
 
-  constructor(private readonly appService: AppService, private characterService: CharacterService) {}
+    constructor(
+        private readonly appService: AppService,
+        private readonly loggerService: LoggerService,
+    ) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+    @Get('logs')
+    getLogs(): string {
+        return JSON.stringify(this.loggerService.getVal('logs'));
+    }
 
-  @Get('character/:id')
-    getCharacter(@Param('id') id: string): Character {
-        return this.characterService.getCharacter(+id);
+    @Get()
+    getHello(): string {
+        return this.appService.getHello();
     }
 }
