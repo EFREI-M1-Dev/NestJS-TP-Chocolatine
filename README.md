@@ -1,27 +1,19 @@
-Gacha Game
+# TP NestJS - Théo RICHARD - EFREI M1 - Groupe 2
 
-localhost:3000/gacha/single
-localhost:3000/gacha/multi
+## Lancement du serveur
+`npm run start:dev`
 
-localhost:3000/character/
-localhost:3000/character/:id
+## Description
 
-localhost:3000/user/
-localhost:3000/user/:id
-localhost:3000/user/:id/characters
+Deux types de données : Character et Weapon
 
-Gacha Character :
-- id
-- name
-- image
-- rarity
+### Routes
+Fichier `routes-test.http`
 
-User :
-- id
-- name
+`characters` : GET, POST <br>
+`characters/:id` : GET
 
-Rarities :
-- id
-- name
-- color
-- chance
+`weapons` : GET <br>
+`weapons/:id` : GET
+
+`logs` : GET

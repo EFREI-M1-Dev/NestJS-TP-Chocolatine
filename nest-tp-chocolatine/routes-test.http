@@ -1,0 +1,29 @@
+GET http://localhost:3000/characters HTTP/1.1
+Accept: application/json
+
+###
+GET http://localhost:3000/characters/1 HTTP/1.1
+Accept: application/json
+
+###
+POST http://localhost:3000/characters HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Nilou",
+  "region": "Sumeru",
+  "vision": "Hydro"
+}
+
+###
+GET http://localhost:3000/weapons HTTP/1.1
+Accept: application/json
+
+###
+GET http://localhost:3000/weapons/1 HTTP/1.1
+Accept: application/json
+
+###
+GET http://localhost:3000/logs HTTP/1.1
+Accept: application/json
